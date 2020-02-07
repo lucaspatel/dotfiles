@@ -1,0 +1,30 @@
+tap "homebrew/cask-versions"
+tap "homebrew/cask-drivers"
+
+brew "git"
+brew "node"
+brew "python"
+brew "tmux"
+brew "vim"
+
+cask "anki"
+cask "appcleaner"
+cask "enpass"
+cask "figma"
+cask "firefox"
+cask "google-chrome"
+cask "keka"
+cask "iina"
+cask "iterm2"
+cask "logitech-options"
+cask "nordvpn"
+cask "notion"
+cask "spotify"
+cask "steam"
+cask "sublime-text"
+cask "transmission"
+cask "visual-studio-code"
+
+mas 'Keynote', id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
