@@ -1,9 +1,24 @@
+# author: lucas
 
+# =============== General ===============
 
 # disable automatic space rearrangement
 defaults write com.apple.dock mru-spaces -bool false
 
+# =============== Mouse / Keyboard ===============
+
 # set speedy keyboard repeats
 defaults write -g InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 2 
+defaults write -g KeyRepeat -int 2
 
+# disable "natural" style scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+# =============== Applications ===============
+
+# disabled automatically opening Photos upon device plugin
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+# empty dock and include iTerm
+dockutil --no-restart --remove all
+dockutil --no-restart --add "/Applications/iTerm.app"

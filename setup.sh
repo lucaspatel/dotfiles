@@ -1,12 +1,15 @@
-#!/bin/sh
-# New Mac setup script, configured for macOS Catalina
-# Author: Lucas
+#!/bin/bash
+# author: lucas
+
+# ================ User Setup ====================
 
 echo "Getting user information before setup:"
 echo "Enter full name:"
 read name
 echo "Enter email for Git:"
 read email
+
+# ================ Terminal Configuration ====================
 
 # Xcode
 echo "Installing Xcode CLI..."
@@ -36,8 +39,6 @@ echo "Installing brews..."
 # TODO: install brews from .brewfile
 
 # Zsh
-echo "Installing Oh My ZSH..."
-curl -L http://install.ohmyz.sh | sh
 echo "Setting ZSH as default shell..."
 chsh -s /bin/zsh
 
@@ -47,11 +48,23 @@ brew tap caskroom/cask
 brew cask install ${apps[@]}
 # TODO: install casks from .brewfile
 
-# Theming
+# ================ Theming ====================
+
 # Zsh
 git clone https://github.com/dracula/zsh.git 
-ln -s zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme #fix paths
-# Vim
+ln -s zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
+
+# Vim: see .vimrc
+
 # iTerm2
+# TODO: add iterm2 config file
+
 # VSCode
+
 # Sublime
+
+# ================ MacOS Config ====================
+source .macos
+# TODO: test .macos config sourcing
+
+
