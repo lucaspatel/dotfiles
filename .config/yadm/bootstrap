@@ -1,0 +1,52 @@
+#!/bin/bash
+# author: lucas
+
+# ================ User Setup ====================
+
+if [[ $(git config --global user.email) = '' ]]; then
+  echo "Getting user information before setup:"
+  echo "Enter full name:"
+  read name
+  echo "Enter email for Git:"
+  read email
+fi
+
+# ================ Terminal Configuration ====================
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Darwin" ]; then
+
+  # Homebrew
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing Homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Installing brews and casks..."
+    brew bundle --global
+  fi
+
+fi
+
+echo "Configuring Git..."
+git config --global user.name $name > /dev/null 2>&1
+git config --global user.email $email > /dev/null 2>&1
+
+# Zsh
+if [[ "$SHELL" != "/bin/zsh" ]]; then
+  echo "Setting ZSH as default shell..."
+  chsh -s /bin/zsh
+  compaudit | xargs chmod g-w
+fi
+  
+# macOS
+echo "Tweaking macOS defaults..."
+
+# ================ Theming ====================
+
+# Fonts
+
+# iTerm
+# TODO: link iterm profile

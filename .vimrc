@@ -123,7 +123,7 @@ set expandtab
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
-:set nonumber                                                                1,1           Top
+set nonumber           
 
 " ================ Custom Commands ======================
 

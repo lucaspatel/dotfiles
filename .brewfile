@@ -8,7 +8,6 @@ tap "homebrew/cask-drivers"
 # ================ CLI Tools ====================
 
 brew "git"
-brew "node"
 brew "python"
 brew "tmux"
 brew "vim"
@@ -21,7 +20,6 @@ cask "enpass"
 cask "figma"
 cask "firefox"
 cask "google-chrome"
-cask "keka"
 cask "iina"
 cask "iterm2"
 cask "logitech-options"
@@ -35,6 +33,6 @@ cask "visual-studio-code"
 
 # ================ Mac App Store ====================
 
-mas 'Keynote', id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+# mas 'Keynote', id: 409183694
+# mas "Numbers", id: 409203825
+# mas "Pages", id: 409201541
