@@ -16,6 +16,7 @@ brew "vim"
 
 cask "anki"
 cask "appcleaner"
+cask "docker"
 cask "enpass"
 cask "figma"
 cask "firefox"
@@ -36,3 +37,4 @@ cask "visual-studio-code"
 # mas 'Keynote', id: 409183694
 # mas "Numbers", id: 409203825
 # mas "Pages", id: 409201541
+mas "Wipr", id: 1320666476

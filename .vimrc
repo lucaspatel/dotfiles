@@ -45,6 +45,12 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'powerline/powerline'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'rust-lang/rust.vim'
+
+" Themes
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " ================ Persistent Undo ==================
@@ -56,30 +62,6 @@ if has('persistent_undo') && isdirectory(expand('~').'/.vim/backups')
   set undodir=~/.vim/backups
   set undofile
 endif
-
-" ================ Indentation ======================
-
-set autoindent
-set smartindent
-set nocompatible
-
-" ================ General Config ====================
-
-set number                      "Line numbers are good
-set backspace=indent,eol,start  "Allow backspace in insert mode
-set history=1000                "Store lots of :cmdline history
-set showmode                    "Show current mode down the bottom
-set visualbell                  "No sounds
-set autoread                    "Reload files changed outside vim
-set ruler                       "Add the current line and column"
-
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-filetype on                     "Enable file type detection
-syntax on                       "Enable syntax highlighting
 
 " =============== Plug Initialization ===============
 
@@ -94,11 +76,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'powerline/powerline'
 Plug 'francoiscabrol/ranger.vim'
-
-" Themes
-Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-call plug#end()
 
 " ================ Persistent Undo ==================
 
@@ -123,7 +100,6 @@ set expandtab
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
-set nonumber           
 
 " ================ Custom Commands ======================
 

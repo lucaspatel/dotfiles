@@ -22,17 +22,17 @@ defaults delete com.apple.dock persistent-apps
 defaults delete com.apple.dock persistent-others
 killall Dock
 
-# hide the dock
+# don't show recent applications in dock
+defaults write com.apple.dock show-recents -bool false
+
+# hide the dock automatically
 defaults write com.apple.dock autohide -bool true
 
 # =============== Mouse / Keyboard ===============
 
 # set speedy keyboard repeats
-defaults write -g InitialKeyRepeat -int 10
-defaults write -g KeyRepeat -int 1
-
-# disable "natural" style scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write -g InitialKeyRepeat -int 20
+defaults write -g KeyRepeat -int 2
 
 # =============== Applications ===============
 

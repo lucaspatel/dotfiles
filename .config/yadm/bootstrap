@@ -35,6 +35,14 @@ git config --global user.name $name > /dev/null 2>&1
 git config --global user.email $email > /dev/null 2>&1
 
 # Zsh
+
+echo "Installing zsh4humans..."
+if command -v curl >/dev/null 2>&1; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v2/install)"
+else
+  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v2/install)"
+fi
+
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   echo "Setting ZSH as default shell..."
   chsh -s /bin/zsh
@@ -43,6 +51,10 @@ fi
   
 # macOS
 echo "Tweaking macOS defaults..."
+
+# ================ Languages ====================
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # ================ Theming ====================
 
