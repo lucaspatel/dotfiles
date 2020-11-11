@@ -47,6 +47,7 @@ Plug 'powerline/powerline'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 " Themes
 Plug 'arcticicestudio/nord-vim'
@@ -62,20 +63,6 @@ if has('persistent_undo') && isdirectory(expand('~').'/.vim/backups')
   set undodir=~/.vim/backups
   set undofile
 endif
-
-" =============== Plug Initialization ===============
-
-" This installs Plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-call plug#begin('~/.vim/plugged')
-" Plugins
-Plug 'junegunn/goyo.vim'
-Plug 'powerline/powerline'
-Plug 'francoiscabrol/ranger.vim'
 
 " ================ Persistent Undo ==================
 

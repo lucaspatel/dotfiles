@@ -65,7 +65,7 @@ fi
 z4h init || return
 
 # Enable emacs (-e) or vi (-v) keymap.
-bindkey -e
+bindkey -v
 
 # Export environment variables.
 export EDITOR=nano
