@@ -11,17 +11,17 @@ This repo contains my dotfiles, constructed piecemeal through research and tinke
 
 ## Getting Started <a name="getting_started"></a>
 
-### Prerequisites
-
-No prerequisites are needed, however a new macOS setup may require Xcode.
-```
-xcode —select-install
-```
-
 ### Installing
 
-Simply curl the Gist or clone the repo.
+Simply curl the setup Gist like so:
 ```
+```
+
+Or paste the following commands:
+```
+git clone https://github.com/lucaspatel/dotfiles
+yadm submodule update --init --recursive
+yadm bootstrap
 ```
 
 ## Accreditation <a name="accreditation"></a>
