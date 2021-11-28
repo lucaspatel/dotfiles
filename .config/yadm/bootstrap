@@ -33,6 +33,7 @@ fi
 echo "Configuring Git..."
 git config --global user.name $name > /dev/null 2>&1
 git config --global user.email $email > /dev/null 2>&1
+gh auth login
 
 # Zsh
 echo "Installing zsh4humans..."
