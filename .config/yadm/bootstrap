@@ -20,7 +20,7 @@ if [ "$system_type" = "Darwin" ]; then
   # Homebrew
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing Homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   if [ -f "$HOME/.Brewfile" ]; then
@@ -35,7 +35,6 @@ git config --global user.name $name > /dev/null 2>&1
 git config --global user.email $email > /dev/null 2>&1
 
 # Zsh
-
 echo "Installing zsh4humans..."
 if command -v curl >/dev/null 2>&1; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
@@ -48,6 +47,9 @@ if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s /bin/zsh
   compaudit | xargs chmod g-w
 fi
+
+# Tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   
 # macOS
 echo "Tweaking macOS defaults..."

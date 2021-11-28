@@ -9,14 +9,15 @@ tap "homebrew/cask-drivers"
 
 brew "git"
 brew "python"
+brew "streamlink"
 brew "tmux"
 brew "vim"
-brew "streamlink"
 
 # ================ General Applications ====================
 
 cask "anki"
 cask "appcleaner"
+cask "citrix-workspace"
 cask "docker"
 cask "enpass"
 cask "figma"
@@ -25,12 +26,14 @@ cask "google-chrome"
 cask "iina"
 cask "iterm2"
 cask "logitech-options"
+cask "netnewswire"
 cask "nordvpn"
 cask "notion"
+cask "rectangle"
 cask "spotify"
 cask "sublime-text"
 cask "transmission"
-cask "visual-studio-code"
+cask "vscodium"
 cask "zotero"
 cask "zoom"
 
@@ -40,3 +43,5 @@ cask "zoom"
 # mas "Numbers", id: 409203825
 # mas "Pages", id: 409201541
 mas "Wipr", id: 1320666476
+mas "Notability", id: 360593530
+mas "Infuse 7", id: 1136220934
