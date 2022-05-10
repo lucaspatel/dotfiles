@@ -20,7 +20,7 @@ if [ "$system_type" = "Darwin" ]; then
   # Homebrew
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing Homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
   fi
 
   if [ -f "$HOME/.Brewfile" ]; then
@@ -34,14 +34,6 @@ echo "Configuring Git..."
 git config --global user.name $name > /dev/null 2>&1
 git config --global user.email $email > /dev/null 2>&1
 gh auth login
-
-# Zsh
-echo "Installing zsh4humans..."
-if command -v curl >/dev/null 2>&1; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
-else
-  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
-fi
 
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   echo "Setting ZSH as default shell..."
@@ -66,4 +58,16 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # Fonts
 
 # iTerm
-# TODO: link iterm profile
+echo "Configuring iTerm..."
+cp ~/.config/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences
+
+# Zsh
+echo "Installing zsh4humans..."
+if command -v curl >/dev/null 2>&1; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+else
+  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+fi
+
+# ================ Configuration ====================
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false

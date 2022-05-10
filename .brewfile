@@ -13,34 +13,36 @@ brew "python@3.9"
 brew "streamlink"
 brew "tmux"
 brew "vim"
+brew "yadm"
 
 # ================ General Applications ====================
 
 cask "anki"
 cask "appcleaner"
-cask "citrix-workspace"
+cask "discord"
 cask "docker"
 cask "enpass"
 cask "figma"
 cask "firefox"
-cask "google-chrome"
 cask "iina"
 cask "iterm2"
 cask "logitech-options"
+cask "lulu"
 cask "netnewswire"
 cask "nordvpn"
-cask "notion"
+cask "obsidian"
 cask "rectangle"
+cask "slack"
 cask "spotify"
-cask "sublime-text"
+cask "sublime-merge"
 cask "transmission"
-cask "vscodium"
+cask "visual-studio-code"
 cask "zotero"
 cask "zoom"
 
 # ================ Mac App Store ====================
 
-# mas 'Keynote', id: 409183694
+mas 'Keynote', id: 409183694
 # mas "Numbers", id: 409203825
 # mas "Pages", id: 409201541
 mas "Wipr", id: 1320666476
