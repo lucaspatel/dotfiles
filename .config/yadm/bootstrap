@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # author: lucas
 
 # ================ User Setup ====================
@@ -6,9 +6,9 @@
 if [[ $(git config --global user.email) = '' ]]; then
   echo "Getting user information before setup:"
   echo "Enter full name:"
-  read name
+  read -r name
   echo "Enter email for Git:"
-  read email
+  read -r email
 fi
 
 # ================ Terminal Configuration ====================
@@ -21,7 +21,11 @@ if [ "$system_type" = "Darwin" ]; then
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/lucas/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
+
+  echo "A" | sudo softwareupdate --install-rosetta
 
   if [ -f "$HOME/.Brewfile" ]; then
     echo "Installing brews and casks..."
@@ -40,7 +44,7 @@ if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s /bin/zsh
   compaudit | xargs chmod g-w
 fi
-
+## TODO: Configure YADM installation
 # Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   

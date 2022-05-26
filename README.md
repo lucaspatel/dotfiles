@@ -13,16 +13,10 @@ This repo contains my dotfiles, constructed piecemeal through research and tinke
 
 ### Installing
 
-Simply curl the setup Gist like so:
+Simply paste the following command into a terminal:
 ```
-```
-
-Or paste the following commands:
-```
-git clone https://github.com/lucaspatel/dotfiles
-yadm submodule update --init --recursive
-yadm bootstrap
-```
+curl -L bootstrap.yadm.io | bash
+ ```
 
 ## Accreditation <a name="accreditation"></a>
 
