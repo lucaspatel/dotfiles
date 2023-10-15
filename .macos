@@ -5,6 +5,10 @@
 # disable automatic space rearrangement
 defaults write com.apple.dock mru-spaces -bool false
 
+# disable space switching when opening new applications
+defaults write com.apple.dock workspaces-auto-swoosh -boolean NO
+
+
 # automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 

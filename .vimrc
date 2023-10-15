@@ -10,6 +10,7 @@ set showmode                    "Show current mode down the bottom
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set ruler                       "Add the current line and column"
+set term=xterm-256color
 
 " don't use arrowkeys, gotta break this bad habit
 noremap <Up> <NOP>
@@ -42,27 +43,22 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'powerline/powerline'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'rust-lang/rust.vim'
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
-
-" Themes
-Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
-" ================ Persistent Undo ==================
+" Themes
+"let g:dracula_italic = 0
+colorscheme dracula
+"highlight Normal ctermbg=None
 
-" Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo') && isdirectory(expand('~').'/.vim/backups')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
-endif
+"if (has("termguicolors"))
+"  set termguicolors
+"endif
 
 " ================ Persistent Undo ==================
 
