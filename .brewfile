@@ -9,7 +9,7 @@ tap "homebrew/cask-drivers"
 
 brew "gh"
 brew "git"
-brew "nvm"
+brew "fnm"
 brew "python@3.9"
 brew "streamlink"
 brew "tmux"
