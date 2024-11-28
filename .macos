@@ -8,7 +8,6 @@ defaults write com.apple.dock mru-spaces -bool false
 # disable space switching when opening new applications
 defaults write com.apple.dock workspaces-auto-swoosh -boolean NO
 
-
 # automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
@@ -35,8 +34,9 @@ defaults write com.apple.dock autohide -bool true
 # =============== Mouse / Keyboard ===============
 
 # set speedy keyboard repeats
-defaults write -g InitialKeyRepeat -int 20
-defaults write -g KeyRepeat -int 2
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write -g InitialKeyRepeat -int 10 # broken?
+defaults write -g KeyRepeat -int 1 # broken?
 
 # =============== Applications ===============
 
